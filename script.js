@@ -56,27 +56,77 @@ window.onclick = function(event) {
     }
 }
 
-// Shakllarni tekshirish va yuborish simulyatsiyasi
+// --- QABULGA YOZILISH TIZIMI (REAL ISHLAYDIGAN QISM) ---
+
+// Arizalarni xotiraga saqlash funksiyasi
+function saveAppointment(name, phone, department, message = "Izoh yo'q") {
+    // Avval xotirada bor arizalarni olamiz
+    let appointments = JSON.parse(localStorage.getItem('appointments')) || [];
+    
+    // Yangi ariza obyektini yaratamiz
+    const newAppointment = {
+        id: Date.now(),
+        name: name,
+        phone: phone,
+        department: department,
+        message: message,
+        date: new Date().toLocaleString()
+    };
+    
+    // Ro'yxatga qo'shamiz va xotiraga qayta yozamiz
+    appointments.push(newAppointment);
+    localStorage.setItem('appointments', JSON.stringify(appointments));
+    
+    // Konsolda tekshirish uchun chiqarish
+    console.log("Muvaffaqiyatli saqlandi:", newAppointment);
+}
+
+// 1. Sahifadagi asosiy katta forma (contact.html ichidagi)
 const mainForm = document.getElementById('mainForm');
 if(mainForm) {
     mainForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        alert('Rahmat! Arizangiz muvaffaqiyatli qabul qilindi. 15 daqiqa ichida operatorlarimiz bog\'lanishadi.');
-        this.reset();
+        
+        // Formadagi qiymatlarni olish (tartib bo'yicha inputlarni tanlaydi)
+        const name = this.querySelector('input[type="text"]').value;
+        const phone = this.querySelector('input[type="tel"]').value;
+        const department = this.querySelector('select').value;
+        const message = this.querySelector('textarea') ? this.querySelector('textarea').value : "Izoh yo'q";
+        
+        // Xotiraga saqlash funksiyasini chaqiramiz
+        saveAppointment(name, phone, department, message);
+        
+        // Foydalanuvchiga chiroyli xabar
+        alert(`Rahmat, ${name}! Arizangiz muvaffaqiyatli qabul qilindi.\nYo'nalish: ${department.toUpperCase()}\nTez orada aloqaga chiqamiz.`);
+        
+        this.reset(); // Formani tozalash
     });
 }
 
+// 2. Yuqoridagi tugma bosilganda ochiladigan Modal ichidagi tezkor forma
 const modalForm = document.getElementById('modalForm');
 if(modalForm) {
     modalForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        alert('Tezkor navbat arizangiz muvaffaqiyatli yuborildi. Salomat bo\'ling!');
-        closeModal();
-        this.reset();
+        
+        // Modal ichidagi qiymatlarni olish
+        const name = this.querySelectorAll('input')[0].value;
+        const phone = this.querySelectorAll('input')[1].value;
+        const department = "Tezkor ariza (Umumiy)";
+        
+        saveAppointment(name, phone, department, "Modal oyna orqali yuborildi");
+        
+        alert(`Tezkor arizangiz qabul qilindi, ${name}! Operatorlarimiz sizga qo'ng'iroq qilishadi.`);
+        
+        closeModal(); // Modalni yopish
+        this.reset(); // Formani tozalash
     });
 }
 
-// SCROLL REVEAL ANIMATSIYASI (Sahifa o'tganda silliq chiqish)
+
+// --- ANIMATSIYALAR QISMI ---
+
+// SCROLL REVEAL ANIMATSIYASI
 const sections = document.querySelectorAll('section, .info-section, .services-grid, .doctors-grid, .appointment-section');
 
 sections.forEach(sec => {
@@ -95,18 +145,18 @@ const revealOnScroll = () => {
 };
 
 window.addEventListener('scroll', revealOnScroll);
-revealOnScroll(); // Dastlabki yuklanganda tekshirish
+revealOnScroll();
 
-// RAQAMLAR ANIMATSIYASI (0 dan kerakli raqamgacha sanash)
+// RAQAMLAR ANIMATSIYASI
 const stats = document.querySelectorAll('.stat-box h2');
-let started = false; // Faqat bir marta ishlashi uchun
+let started = false;
 
 const startCount = () => {
     stats.forEach(stat => {
         const target = parseInt(stat.innerText.replace(/[^0-9]/g, ''));
-        const suffix = stat.innerText.replace(/[0-9]/g, ''); // '+' belgisini saqlab qolish
+        const suffix = stat.innerText.replace(/[0-9]/g, '');
         let count = 0;
-        const speed = target / 50; // Tezlikni sozlash
+        const speed = target / 50;
         
         const updateCount = () => {
             if(count < target) {
@@ -120,7 +170,6 @@ const startCount = () => {
     });
 };
 
-// Scroll orqali statistika bo'limiga yetganda ishga tushirish
 const statsSection = document.querySelector('.stats-section');
 if(statsSection) {
     window.addEventListener('scroll', () => {
