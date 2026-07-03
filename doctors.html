@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akfa Medline - Tajribali Shifokorlarimiz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1><i class="fas fa-heartbeat"></i>AKFA <span>MEDLINE</span></h1>
+            </div>
+            <div class="nav-container">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Bosh sahifa</a></li>
+                    <li><a href="services.html">Xizmatlar</a></li>
+                    <li><a href="doctors.html" class="active">Shifokorlar</a></li>
+                    <li><a href="contact.html">Bog'lanish</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggleBtn"><i class="fas fa-moon"></i></button>
+                <button class="appointment-btn" onclick="openModal()">Qabulga yozilish</button>
+                <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <h2>Bizning Professional Shifokorlar</h2>
+        <p>Xalqaro nufuzga hamda ko'p yillik muvaffaqiyatli tajribaga ega shifokorlar jamoasi</p>
+    </div>
+
+    <section>
+        <div class="section-title">
+            <h2>Tibbiyot Elitasi</h2>
+        </div>
+        
+        <div class="doctors-grid">
+            <div class="doctor-card">
+                <div class="doctor-img">
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Dr. Alimov">
+                </div>
+                <div class="doctor-info">
+                    <h3>Dr. Alimov Sardor</h3>
+                    <p>Tibbiyot Fanlari Nomzodi, Bosh Kardiolog</p>
+                    <div class="doctor-bio">Yurak yetishmovchiligi va gipertoniya kasalliklarini xalqaro protokollar asosida davolash bo'yicha 18 yillik tajriba.</div>
+                </div>
+            </div>
+
+            <div class="doctor-card">
+                <div class="doctor-img">
+                    <img src="https://images.unsplash.com/photo-1594824813573-246434de83fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Dr. Karimova">
+                </div>
+                <div class="doctor-info">
+                    <h3>Dr. Karimova Malika</h3>
+                    <p>Oliy Toifali Nevropatolog</p>
+                    <div class="doctor-bio">Asab tizimi funksional buzilishlari hamda murakkab nevralgiyalarni bartaraf etish bo'yicha yetakchi ekspert.</div>
+                </div>
+            </div>
+
+            <div class="doctor-card">
+                <div class="doctor-img">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Dr. Petrov">
+                </div>
+                <div class="doctor-info">
+                    <h3>Dr. Petrov Aleksandr</h3>
+                    <p>Professor, Bosh Xirurg</p>
+                    <div class="doctor-bio">3000 dan ortiq muvaffaqiyatli laparoskopik va rekonstruktiv jarrohlik amaliyotlarini bajargan jarroh.</div>
+                </div>
+            </div>
+
+            <div class="doctor-card">
+                <div class="doctor-img">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Dr. Axmedova">
+                </div>
+                <div class="doctor-info">
+                    <h3>Dr. Axmedova Nigora</h3>
+                    <p>Oliy Toifali Pediatr</p>
+                    <div class="doctor-bio">Go'daklar parvarishi va bolalar yuqumli kasalliklarini erta aniqlash bo'yicha 15 yillik muvaffaqiyatli faoliyat.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section" style="background-color: var(--light-bg); text-align: center; transition: var(--transition);">
+        <h3>Doimiy Malaka Oshirish</h3>
+        <p style="max-width: 800px; margin: 20px auto 0;">Bizning shifokorlarimiz har yili Yevropa va Osiyoning yetakchi tibbiy akademiyalarida stajirovka o'tab qaytishadi. Bu esa bizga tibbiyot olamidagi eng so'nggi va samarali yangiliklarni darhol amaliyotga joriy etish imkonini beradi.</p>
+    </section>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Akfa Medline. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

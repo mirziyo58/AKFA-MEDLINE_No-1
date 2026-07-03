@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akfa Medline - Tibbiy Xizmatlar Ro'yxati</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1><i class="fas fa-heartbeat"></i>AKFA <span>MEDLINE</span></h1>
+            </div>
+            <div class="nav-container">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Bosh sahifa</a></li>
+                    <li><a href="services.html" class="active">Xizmatlar</a></li>
+                    <li><a href="doctors.html">Shifokorlar</a></li>
+                    <li><a href="contact.html">Bog'lanish</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggleBtn"><i class="fas fa-moon"></i></button>
+                <button class="appointment-btn" onclick="openModal()">Qabulga yozilish</button>
+                <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <h2>Keng Qamrovli Tibbiy Xizmatlar</h2>
+        <p>Markazimizda mavjud bo'lgan zamonaviy yo'nalishlar va davolash usullari bilan batafsil tanishing</p>
+    </div>
+
+    <section>
+        <div class="section-title">
+            <h2>Klinikamiz Bo'limlari</h2>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kardiologiya">
+                </div>
+                <div class="service-content">
+                    <h3>Kardiologiya va Interventsion Kardiologiya</h3>
+                    <p>Yurak-qon tomir tizimi kasalliklarini eng erta bosqichlarda aniqlash, murakkab stentlash va ochiq yurak operatsiyalarini yuqori aniqlikda bajarish.</p>
+                    <ul class="service-features-list">
+                        <li><i class="fas fa-check"></i> EKG, Exokardiografiya (UZI)</li>
+                        <li><i class="fas fa-check"></i> Koronarografiya va Stentlash</li>
+                        <li><i class="fas fa-check"></i> Kun-u tun ishlaydigan Kardioreanimatsiya</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1579684389782-64d84b5e902a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Nevrologiya">
+                </div>
+                <div class="service-content">
+                    <h3>Nevrologiya va Neyroxirurgiya</h3>
+                    <p>Asab tizimining surunkali patologiyalari, insultdan keyingi reabilitatsiya, miya va umurtqa pog'onasi churralarini operativ hamda konservativ davolash.</p>
+                    <ul class="service-features-list">
+                        <li><i class="fas fa-check"></i> Bosh og'riqlari va uyqusizlikni davolash</li>
+                        <li><i class="fas fa-check"></i> Elektroensefalografiya (EEG)</li>
+                        <li><i class="fas fa-check"></i> Umurtqa churralarini mikroxirurgiyasi</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Xirurgiya">
+                </div>
+                <div class="service-content">
+                    <h3>Umumiy va Laparoskopik Xirurgiya</h3>
+                    <p>Katta kesmalarsiz, faqat kichik nuqtalar orqali (laparoskopik usulda) amalga oshiriladigan, asoratsiz va tez tiklanadigan zamonaviy jarrohlik amaliyotlari.</p>
+                    <ul class="service-features-list">
+                        <li><i class="fas fa-check"></i> O't pufagi va churralar plastikasi</li>
+                        <li><i class="fas fa-check"></i> Kam jarohatli laparoskopiya</li>
+                        <li><i class="fas fa-check"></i> Operatsiyadan keyingi maxsus parvarish</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Pediatriya">
+                </div>
+                <div class="service-content">
+                    <h3>Pediatriya va Bolalar Sog'lig'i</h3>
+                    <p>Tug'ilgandan boshlab balog'at yoshigacha bo'lgan bolalarni har tomonlama tibbiy nazorat qilish, emlash dasturlari hamda bolalar allergologiyasi.</p>
+                    <ul class="service-features-list">
+                        <li><i class="fas fa-check"></i> Rejali pediatr ko'rigi va maslahati</li>
+                        <li><i class="fas fa-check"></i> Xalqaro vaksinalar bilan emlash</li>
+                        <li><i class="fas fa-check"></i> Bolalar jismoniy rivojlanish auditi</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1560756285-96662a1c485d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Ortopediya">
+                </div>
+                <div class="service-content">
+                    <h3>Ortopediya va Travmatologiya</h3>
+                    <p>Bo'g'imlarni endoprotezlash (sun'iy bo'g'im o'rnatish), umurtqa va suyak sinishlaridan keyingi murakkab tiklash jarayonlari.</p>
+                    <ul class="service-features-list">
+                        <li><i class="fas fa-check"></i> Tizza va chanoq-son bo'g'imini almashtirish</li>
+                        <li><i class="fas fa-check"></i> Artroskopik kam invaziv muolajalar</li>
+                        <li><i class="fas fa-check"></i> Sport jarohatlarini davolash</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Diagnostika">
+                </div>
+                <div class="service-content">
+                    <h3>Check-Up va Umumiy Diagnostika</h3>
+                    <p>Butun tanani bor-yo'g'i bir necha soat ichida to'liq tekshiruvdan o'tkazishga mo'ljallangan maxsus va qulay Check-up paketlari.</p>
+                    <ul class="service-features-list">
+                        <li><i class="fas fa-check"></i> Ayollar va erkaklar uchun alohida paketlar</li>
+                        <li><i class="fas fa-check"></i> Saraton prekursorlarini erta aniqlash</li>
+                        <li><i class="fas fa-check"></i> Yakuniy shifokor xulosasi va reja</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section" style="border-top: 1px solid var(--border-color);">
+        <h3 style="text-align: center; margin-bottom: 30px;">Qo'shimcha Qulayliklar</h3>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Klinikamizga kelgan har bir bemor va uning yaqinlari uchun barcha zaruriy shart-sharoitlar yaratilgan. Markaz hududida dorixona, shinam kafe, bolalar maydonchasi hamda keng avtoturargoh kecha-yu kunduz xizmatingizda.</p>
+    </section>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Akfa Medline. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

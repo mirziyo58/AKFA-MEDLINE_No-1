@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akfa Medline - Aloqa va Manzil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1><i class="fas fa-heartbeat"></i>AKFA <span>MEDLINE</span></h1>
+            </div>
+            <div class="nav-container">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Bosh sahifa</a></li>
+                    <li><a href="services.html">Xizmatlar</a></li>
+                    <li><a href="doctors.html">Shifokorlar</a></li>
+                    <li><a href="contact.html" class="active">Bog'lanish</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggleBtn"><i class="fas fa-moon"></i></button>
+                <button class="appointment-btn" onclick="openModal()">Qabulga yozilish</button>
+                <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <h2>Biz bilan Bog'lanish</h2>
+        <p>Savollaringiz bor yoki shoshilinch yordam kerakmi? Biz bilan tezkor bog'laning</p>
+    </div>
+
+    <section class="appointment-section">
+        <div class="appointment-info">
+            <h2>Klinika Ma'lumotlari</h2>
+            <p>Siz o'zingizni qiziqtirgan har qanday savollar yuzasidan koll-markazimizga qo'ng'iroq qilishingiz yoki to'g'ridan-to'g'ri klinikamizga tashrif buyurishingiz mumkin.</p>
+            
+            <div class="contact-detail-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <strong>Manzil:</strong><br>
+                    Toshkent shahar, Olmazor tumani, Kichik halqa yo'li, 5A (Mo'ljal: Beruniy metrosi yaqinida)
+                </div>
+            </div>
+
+            <div class="contact-detail-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                    <strong>Yagona Aloqa Markazi:</strong><br>
+                    +998 71 210 03 03 / +998 71 210 03 04
+                </div>
+            </div>
+
+            <div class="contact-detail-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <strong>Elektron Pochta:</strong><br>
+                    info@akfamedline.uz / support@akfamedline.uz
+                </div>
+            </div>
+
+            <div class="contact-detail-item">
+                <i class="fas fa-ambulance"></i>
+                <div>
+                    <strong>Tez Yordam Xizmati (24/7):</strong><br>
+                    1103 (Klinika qoshidagi tezkor brigada)
+                </div>
+            </div>
+        </div>
+        
+        <div class="appointment-form">
+            <h3 style="margin-bottom: 25px; color: var(--dark-color); font-size: 24px;">Onlayn Navbat Olish</h3>
+            <form id="mainForm">
+                <div class="form-group">
+                    <label>To'liq ism va familiyangiz</label>
+                    <input type="text" placeholder="Masalan: Abdullayev Asror" required>
+                </div>
+                <div class="form-group">
+                    <label>Telefon raqamingiz</label>
+                    <input type="tel" placeholder="+998" required>
+                </div>
+                <div class="form-group">
+                    <label>Tibbiy yo'nalish</label>
+                    <select required>
+                        <option value="">Yo'nalishni tanlang</option>
+                        <option value="kardiologiya">Kardiologiya va Interventsiya</option>
+                        <option value="nevrologiya">Nevrologiya va Neyroxirurgiya</option>
+                        <option value="xirurgiya">Umumiy Xirurgiya</option>
+                        <option value="pediatriya">Pediatriya</option>
+                        <option value="diagnostika">Kompleks Check-Up</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Qo'shimcha izoh yoki savolingiz (ixtiyoriy)</label>
+                    <textarea rows="4" placeholder="Sizni nima bezovta qilayotganini yozishingiz mumkin..."></textarea>
+                </div>
+                <button type="submit" class="appointment-btn" style="width: 100%; border-radius: 5px; padding: 14px;">Arizani tasdiqlash uchun yuborish</button>
+            </form>
+        </div>
+    </section>
+
+    <div style="padding: 40px 5%; text-align: center; background-color: var(--light-bg); transition: var(--transition);">
+        <h3>Ish Tartibimiz</h3>
+        <p style="margin-top: 10px;">Poliklinika bo'limi: Dushanba - Shanba (08:00 dan 18:00 gacha)<br>Statsionar va Tez yordam bo'limi: 24 soat davomida dam olish kunlarisiz ishlaydi.</p>
+    </div>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Akfa Medline. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

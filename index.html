@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akfa Medline - Yuqori Texnologiyali Tibbiyot Markazi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="info">
+            <div><i class="fas fa-phone"></i> +998 71 210 03 03</div>
+            <div><i class="fas fa-clock"></i> 24/7 Davomida ochiq</div>
+            <div><i class="fas fa-map-marker-alt"></i> Toshkent sh., Olmazor tumani, Kichik halqa yo'li, 5A</div>
+        </div>
+        <div class="socials">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+        </div>
+    </div>
+
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1><i class="fas fa-heartbeat"></i>AKFA <span>MEDLINE</span></h1>
+            </div>
+            <div class="nav-container">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="active">Bosh sahifa</a></li>
+                    <li><a href="services.html">Xizmatlar</a></li>
+                    <li><a href="doctors.html">Shifokorlar</a></li>
+                    <li><a href="contact.html">Bog'lanish</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggleBtn"><i class="fas fa-moon"></i></button>
+                <button class="appointment-btn" onclick="openModal()">Qabulga yozilish</button>
+                <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>Sizning salomatligingiz — Bizning oliy mas'uliyatimiz!</h2>
+        <p>Markaziy Osiyodagi eng yirik ko'p tarmoqli xususiy tibbiyot majmuasi. Eng ilg'or xalqaro standartlar va yuqori texnologiyalar uyg'unligi.</p>
+        <div class="hero-btns">
+            <a href="services.html" class="btn-primary">Klinika xizmatlari</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-box">
+            <i class="fas fa-user-md"></i>
+            <h3>Xalqaro Professorlar</h3>
+            <p>Xorijiy klinikalarda malaka oshirgan va ilmiy darajaga ega eng kuchli shifokorlar.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-microscope"></i>
+            <h3>Ekspert Diagnostika</h3>
+            <p>Yevropaning eng so'nggi rusumdagi MRT, MSKT va robotlashtirilgan laboratoriya jihozlari.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-hospital"></i>
+            <h3>Shinam Gospital</h3>
+            <p>Barcha qulayliklarga ega bo'lgan 5 yulduzli mehmonxona darajasidagi statsionar palatalar.</p>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="info-grid">
+            <div class="info-text">
+                <h3>Nima uchun aynan AKFA Medline?</h3>
+                <p>Bizning tibbiyot markazimiz nafaqat respublika, balki butun mintaqa miqyosida yetakchi o'rinni egallab kelmoqda. Biz bemorlarimizga kasallikni aniqlashdan tortib, to'liq sog'ayib ketgunga qadar bo'lgan davrda har tomonlama g'amxo'rlik va yuksak e'tibor ko'rsatamiz.</p>
+                <p>Klinikamiz tarkibida zamonaviy xirurgiya bloki, kardioreanimatsiya, keng qamrovli diagnostika markazi va yuqori darajadagi fizioterapiya bo'limi kecha-yu kunduz faoliyat yuritadi. Har bir insonga individual yondashuv - bu bizning asosiy tamoyilimizdir.</p>
+            </div>
+            <div class="info-img">
+                <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Medline binosi ichki qismi">
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-box">
+                <h2>50,000+</h2>
+                <p>Sog'aygan Bemorlar</p>
+            </div>
+            <div class="stat-box">
+                <h2>150+</h2>
+                <p>Yuqori Malakali Shifokorlar</p>
+            </div>
+            <div class="stat-box">
+                <h2>40+</h2>
+                <p>Tibbiyot Yo'nalishlari</p>
+            </div>
+            <div class="stat-box">
+                <h2>15+</h2>
+                <p>Yillik Tajriba</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section" style="background-color: var(--light-bg); transition: var(--transition);">
+        <div class="section-title">
+            <h2>Bizning Yutuqlarimiz va Missiyamiz</h2>
+        </div>
+        <div style="max-width: 900px; margin: 0 auto; text-align: justify;">
+            <p style="margin-bottom: 20px;">AKFA Medline tashkil etilgan ilk kunlardan boshlab mamlakatimiz sog'liqni saqlash tizimida sifat jihatidan mutlaqo yangi davrni boshlab berdi. Biz jahonning yetakchi tibbiyot markazlari, jumladan Janubiy Koreya, Germaniya va Turkiya shifoxonalari bilan faol hamkorlik qilamiz. Doimiy ravishda xalqaro shifokorlar ishtirokida murakkab konsiliumlar va mahorat darslari tashkil etiladi.</p>
+            <p>Markazimizning missiyasi — har bir O'zbekiston fuqarosiga xorijga chiqmasdan, o'z vatanida jahon andozalaridagi eng yuqori va xavfsiz tibbiy yordamni olish imkoniyatini yaratishdir. Buning uchun biz har yili texnologik bazamizni yangilab boramiz.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>AKFA MEDLINE</h3>
+                <p>Professional g'amxo'rlik va zamonaviy tibbiyot texnologiyalari birlashgan maskan.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Aloqa Markazi</h3>
+                <p><i class="fas fa-phone"></i> +998 71 210 03 03</p>
+                <p><i class="fas fa-envelope"></i> info@akfamedline.uz</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Akfa Medline. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <div id="appointmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3 style="margin-bottom: 25px; font-size: 24px;">Shifokor Ko'rigiga Yozilish</h3>
+            <form id="modalForm">
+                <div class="form-group">
+                    <label>Ism va Familiyangiz</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Telefon Raqamingiz</label>
+                    <input type="tel" placeholder="+998" required>
+                </div>
+                <button type="submit" class="appointment-btn" style="width: 100%; border-radius: 5px; padding: 12px;">Navbatni Tasdiqlash</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

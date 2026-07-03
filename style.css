@@ -1,0 +1,786 @@
+/* CSS O'ZGARUVCHILARI (LIGHT REJIM VA DARK REJIM) */
+:root {
+    --primary-color: #009688;
+    --secondary-color: #00796b;
+    --bg-color: #ffffff;
+    --text-color: #37474f;
+    --dark-color: #263238;
+    --light-bg: #f4f7f6;
+    --card-bg: #ffffff;
+    --border-color: #e0e0e0;
+    --white: #ffffff;
+    --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #eceff1;
+    --dark-color: #ffffff;
+    --light-bg: #1e1e1e;
+    --card-bg: #1d2a30;
+    --border-color: #37474f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ANIMATSIYALAR (KEYFRAMES) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Scroll davomida chiqadigan animatsiya klassi */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: #263238;
+    color: var(--white);
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    animation: fadeIn 0.8s ease;
+}
+
+.top-bar .info div {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.top-bar .info i {
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+.top-bar .socials a {
+    color: var(--white);
+    margin-left: 15px;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.top-bar .socials a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px) scale(1.2);
+}
+
+/* Navigation */
+header {
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: var(--transition);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+}
+
+.logo h1 {
+    color: var(--primary-color);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 span {
+    color: var(--dark-color);
+}
+
+.logo i {
+    margin-right: 10px;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: var(--transition);
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary-color);
+}
+
+/* Rejim almashtirish tugmasi */
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 5px;
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    color: var(--primary-color);
+    transform: rotate(45deg);
+}
+
+.appointment-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 150, 136, 0.3);
+}
+
+.appointment-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 150, 136, 0.5);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* Banner sahifalar bosh qismi uchun */
+.page-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+    padding: 0 20px;
+}
+
+.page-banner h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    animation: fadeIn 1s ease;
+}
+
+.page-banner p {
+    font-size: 18px;
+    max-width: 700px;
+    animation: fadeIn 1.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 5%;
+    color: var(--white);
+}
+
+.hero h2 {
+    font-size: 54px;
+    margin-bottom: 20px;
+    max-width: 700px;
+    line-height: 1.2;
+    animation: fadeInLeft 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 35px;
+    max-width: 650px;
+    animation: fadeInLeft 1.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.hero-btns .btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 14px 35px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: var(--transition);
+    animation: fadeInLeft 1.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 15px rgba(0, 150, 136, 0.4);
+}
+
+.hero-btns .btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px) scale(1.03);
+}
+
+/* Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 40px 5%;
+    background-color: var(--light-bg);
+    margin-top: -60px;
+    position: relative;
+    z-index: 10;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    transition: var(--transition);
+    animation: fadeIn 1.5s ease;
+}
+
+.feature-box {
+    background-color: var(--card-bg);
+    padding: 35px 25px;
+    text-align: center;
+    border-radius: 8px;
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    border-color: var(--primary-color);
+}
+
+.feature-box i {
+    font-size: 45px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.feature-box:hover i {
+    transform: scale(1.15);
+}
+
+.feature-box h3 {
+    margin-bottom: 12px;
+    color: var(--dark-color);
+    font-size: 22px;
+}
+
+/* Section Title */
+.section-title {
+    text-align: center;
+    margin: 80px 0 50px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+    color: var(--dark-color);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 4px;
+    background-color: var(--primary-color);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    transition: width 1s ease;
+}
+
+/* Scroll bo'lganda sarlavha chizig'i chiziladi */
+.scroll-reveal.active .section-title h2::after {
+    width: 60%;
+}
+
+/* Info Text Blocks */
+.info-section {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    align-items: center;
+}
+
+.info-text h3 {
+    font-size: 28px;
+    color: var(--dark-color);
+    margin-bottom: 20px;
+}
+
+.info-img img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.info-img:hover img {
+    transform: scale(1.03) rotate(1deg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    padding: 0 5% 80px;
+}
+
+.service-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+}
+
+.service-img {
+    height: 240px;
+    overflow: hidden;
+}
+
+.service-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.service-card:hover .service-img img {
+    transform: scale(1.08);
+}
+
+.service-content {
+    padding: 30px;
+}
+
+.service-content h3 {
+    margin-bottom: 15px;
+    color: var(--dark-color);
+    font-size: 24px;
+    transition: var(--transition);
+}
+
+.service-card:hover .service-content h3 {
+    color: var(--primary-color);
+}
+
+.service-features-list {
+    list-style: none;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.service-features-list li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.service-card:hover .service-features-list li {
+    transform: translateX(5px);
+}
+
+.service-features-list li i {
+    color: var(--primary-color);
+    margin-right: 8px;
+}
+
+/* Doctors Grid */
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    padding: 0 5% 80px;
+}
+
+.doctor-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.doctor-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+    border-color: var(--primary-color);
+}
+
+.doctor-img {
+    height: 340px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    position: relative;
+}
+
+.doctor-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.doctor-card:hover .doctor-img img {
+    transform: scale(1.05);
+}
+
+.doctor-info {
+    padding: 25px;
+}
+
+.doctor-info h3 {
+    color: var(--dark-color);
+    margin-bottom: 8px;
+    font-size: 22px;
+}
+
+.doctor-info p {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Statitikalar Bo'limi */
+.stats-section {
+    background-color: var(--light-bg);
+    padding: 60px 5%;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stat-box {
+    transition: var(--transition);
+}
+
+.stat-box:hover {
+    transform: scale(1.08);
+}
+
+.stat-box h2 {
+    font-size: 48px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Appointment Section */
+.appointment-section {
+    padding: 60px 5% 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.appointment-info {
+    flex: 1;
+}
+
+.appointment-info h2 {
+    font-size: 40px;
+    color: var(--dark-color);
+    margin-bottom: 25px;
+}
+
+.contact-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.contact-detail-item:hover {
+    transform: translateX(8px);
+}
+
+.contact-detail-item i {
+    font-size: 24px;
+    color: var(--primary-color);
+    width: 40px;
+    animation: float 3s infinite ease-in-out;
+}
+
+.appointment-form {
+    flex: 1;
+    background-color: var(--light-bg);
+    padding: 45px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.appointment-form:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: var(--transition);
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(0, 150, 136, 0.4);
+    transform: scale(1.01);
+}
+
+/* Footer */
+footer {
+    background-color: #1a2529;
+    color: #b0bec5;
+    padding: 70px 5% 30px;
+    margin-top: auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-col h3 {
+    color: var(--white);
+    margin-bottom: 25px;
+    font-size: 22px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 14px;
+}
+
+.footer-col ul li a {
+    color: #b0bec5;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.footer-col ul li a:hover {
+    color: var(--white);
+    transform: translateX(8px);
+}
+
+.footer-bottom {
+    border-top: 1px solid #37474f;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 15px;
+}
+
+/* Modal Box (Yumshoq ochilish effekti bilan) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.6); 
+    overflow-y: auto;
+    backdrop-filter: blur(5px);
+    transition: opacity 0.4s ease;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    margin: 5% auto; 
+    padding: 40px;
+    border: 1px solid var(--border-color);
+    width: 90%;
+    max-width: 550px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    animation: fadeIn 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.close-btn {
+    color: var(--text-color);
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 32px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-btn:hover {
+    color: var(--primary-color);
+    transform: rotate(90deg);
+}
+
+/* Responsive dizayn */
+@media(max-width: 992px) {
+    .hero h2 { font-size: 42px; }
+    .appointment-section { flex-direction: column; }
+    .info-grid { grid-template-columns: 1fr; }
+}
+
+@media(max-width: 768px) {
+    .top-bar { display: none; }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--card-bg);
+        padding: 30px;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        animation: fadeIn 0.4s ease;
+    }
+    .nav-links.active { display: flex; }
+    .nav-links li { margin: 15px 0; text-align: center; }
+    .menu-toggle { display: block; }
+    .appointment-btn { display: none; }
+    .hero { align-items: center; text-align: center; }
+    .hero h2 { font-size: 34px; }
+}
